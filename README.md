@@ -16,3 +16,7 @@
 4. input元素的value由状态中的属性值决定，实现了对组件的完全控制(（signUp.js）)
 5. byPropKey函数中使用了动态键的用法（signUp.js）
 6. 在使用`this.setState()`更新状态时，向这个函数中传递的不是对象而是函数`byPropKey`，但感觉实际和传了个对象没什么区别，只是为了构造新的状态方便而已。而传递函数的真正目的可以参考[这里](https://juejin.im/entry/5873b04f61ff4b006d4d45f7)。
+
+### 2018.4.17
+
+写完**sign in**组件，但是登陆后页面没有跳转到home页而是刷新了。。。问题啊。。。已经使用了`event.preventDefault()`了啊
