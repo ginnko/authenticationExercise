@@ -19,4 +19,28 @@
 
 ### 2018.4.17
 
-写完**sign in**组件，但是登陆后页面没有跳转到home页而是刷新了。。。问题啊。。。已经使用了`event.preventDefault()`了啊
+1. 写完**sign in**组件，但是登陆后页面没有跳转到home页而是刷新了。。。问题啊。。。已经使用了`event.preventDefault()`了啊
+
+找到问题了!!!
+```
+  onSubmit = (event) => {
+    const {
+      email,
+      password
+    } = this.state;
+  //之前把this.state写成了this.props
+  ...
+
+  }
+```
+
+### 2018.4.18
+
+1. 这段代码要注意一下,这个好像并没有在本地的firebase文件里有出现过,原生的一个api?
+  ```
+  firebase.auth.onAuthStateChanged(authUser => {
+        authUser
+          ? this.setState(() => ({ authUser }))
+          : this.setState(() => ({ authUser: null }));
+      });
+  ```

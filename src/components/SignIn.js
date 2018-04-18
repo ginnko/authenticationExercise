@@ -33,7 +33,7 @@ class SignInForm extends Component {
     const {
       email,
       password
-    } = this.props;
+    } = this.state;
 
     const {
       history
