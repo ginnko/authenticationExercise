@@ -46,3 +46,7 @@
   ```
 
 `onAuthStateChanged`这个函数获取一个函数作为输入，这个作为输入的函数能够接触到`authenticated user objec`。每次这个对象发生变化，这个传入的函数就会被调用（sign in, sign out, sign up）
+
+2. [高階組件](https://www.robinwieruch.de/gentle-introduction-higher-order-components/)
+*媽噠，輸入法莫名奇妙變成繁體還切換不回來了。。。*
+高階組件的一個應用場景是：條件渲染
