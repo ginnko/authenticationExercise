@@ -44,3 +44,5 @@
           : this.setState(() => ({ authUser: null }));
       });
   ```
+
+`onAuthStateChanged`这个函数获取一个函数作为输入，这个作为输入的函数能够接触到`authenticated user objec`。每次这个对象发生变化，这个传入的函数就会被调用（sign in, sign out, sign up）

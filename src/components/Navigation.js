@@ -6,9 +6,9 @@ import * as routes from  '../constants/routes';
 
 const Navigation = ({ authUser }) =>
   <div>
-    (
+    {
       authUser ? <NavigationAuth /> : <NavigationNonAuth />
-    )
+    }
   </div>
 
 const NavigationAuth = () =>
