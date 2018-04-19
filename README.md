@@ -50,3 +50,6 @@
 2. [高階組件](https://www.robinwieruch.de/gentle-introduction-higher-order-components/)
 *媽噠，輸入法莫名奇妙變成繁體還切換不回來了。。。*
 高階組件的一個應用場景是：條件渲染
+
+### 2018.4.19
+- 高阶组件: 高阶组件通常接受一个组建或者其他可选参数作为参数输入,返回一个输入组件的强化版.
