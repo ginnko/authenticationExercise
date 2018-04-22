@@ -53,3 +53,43 @@
 
 ### 2018.4.19
 - 高阶组件: 高阶组件通常接受一个组建或者其他可选参数作为参数输入,返回一个输入组件的强化版.
+
+### 2018.4.22
+  - react's context API
+    - Provider
+    - Consumer
+    **Provider要包在Consumer顶层**
+  - the [render props](https://reactjs.org/docs/render-props.html) pattern
+    ```
+      <AuthUserContext.Consumer>
+        {
+          authUser => authUser
+            ? <NavigationAuth />
+            : <NavigationNonAuth />
+        }
+      </ AuthUserContext.Consumer>
+    ```
+    在Consumer组件中，用的是函数而不是一个组件，这种用法在react中就被称为**参数渲染模式(the render props pattern)**
+
+    这个技巧的应用场景：
+      1. hoc
+      2. 组件重用
+  - 箭头函数简洁形式加括号的问题（PasswordForget.js 30行）  
+    而且此处使用了函数形式
+    ```
+      auth.doPasswordReset(email)
+        .then(() => {
+          this.setState(() => ({ ...INITIAL_STATE }));
+        })
+    ```
+  - authUser改变后会记录email等信息（Account.js中）
+    ```
+      {
+        authUser =>
+          <div>
+            <h1>Account: {authUser.email}</h1>
+            <PasswordForgetForm />
+            <PasswordChangeForm />
+          </div>
+      }
+    ```
