@@ -93,3 +93,12 @@
           </div>
       }
     ```
+### 2018.4.23
+  - authorization  
+    如果发现有非验证用户就重定向到非验证用户看的页面,否则就什么也不做.
+  - 控制条件
+    1. authUser != null(general authorization)
+    2. authUser.role === 'ADMIN'(specific authorization)
+    3. authUser.permission.canEditAccount === true(specific authorization)
+  - authorization: 授权  
+    authentication: 身份验证
