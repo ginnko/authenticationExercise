@@ -1,5 +1,10 @@
 [A Complete Firebase in React Authentication Tutorial ](https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/)项目的练习
 
+分支说明：
+- master：跟随教程包含最新功能以及使用第三方库等
+- basicfunction: 使用react和firebase，没有引入第三方状态管理库，没有使用hoc，render props，context等，不具有路由保护，但是基本功能都有。
+- basicVersion: 使用react和firebase，没有引入第三方状态管理库，加入了hoc，render props,context等，具备路由保护以及user实体操纵，具备全部功能。
+
 ### 2018.4.16
 
 写完**sign up**组件，能够正常工作，真是得感叹黑科技公司的东西真妥么好用
@@ -102,3 +107,6 @@
     3. authUser.permission.canEditAccount === true(specific authorization)
   - authorization: 授权  
     authentication: 身份验证
+  - user entity management  
+    store user in realtime database in firebase during the sign up process
+  - 使用firebase登录后关闭浏览器后再打开，依然是登录状态，firebase会自动管理，withAuthentication()中的监听器也知道已验证的用户对象

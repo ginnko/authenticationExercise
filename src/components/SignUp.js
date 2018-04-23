@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 import * as routes from '../constants/routes';
 
-import {auth} from '../firebase';
+import {auth, db} from '../firebase';
 
 // 用来初始化状态
 const INITIAL_STATE = {
@@ -35,7 +35,8 @@ class SignUpForm extends Component {
   onSubmit = (event) => {
     const {
       email,
-      passwordOne
+      passwordOne,
+      username
     } = this.state;
     const {
       history
@@ -44,7 +45,14 @@ class SignUpForm extends Component {
       .then(authUser => {
         // 清空输入框的内容
         this.setState(() => ({...INITIAL_STATE}));
-        history.push(routes.HOME);
+        db.doCreateUser(authUser.uid, username, email)
+          .then(() => {
+            this.setState(() => ({ ...INITIAL_STATE }));
+            history.push(routes.HOME);
+          })
+          .catch(error => {
+            this.setState(byPropKey('error', error));
+          });
       })
       .catch(error => {
         this.setState(byPropKey('error', error));
