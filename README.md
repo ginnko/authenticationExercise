@@ -113,3 +113,4 @@
 ### 2018.4.24
   - firebase api 教程
     1. [auth](https://firebase.google.com/docs/auth/web/start?authuser=0)
+  - 感觉教程的思路是将结构以及展现内容的组件和执行逻辑的操作的组件分开，状态管理神马的都放进了执行逻辑操作的组件里。
