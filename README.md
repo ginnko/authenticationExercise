@@ -110,3 +110,6 @@
   - user entity management  
     store user in realtime database in firebase during the sign up process
   - 使用firebase登录后关闭浏览器后再打开，依然是登录状态，firebase会自动管理，withAuthentication()中的监听器也知道已验证的用户对象
+### 2018.4.24
+  - firebase api 教程
+    1. [auth](https://firebase.google.com/docs/auth/web/start?authuser=0)
